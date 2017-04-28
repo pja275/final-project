@@ -1,0 +1,71 @@
+.content {
+  width: 300px;
+  position: relative;
+  float: left;
+  margin-top: 50px;
+}
+
+#container_2 {
+  width: 100%;
+  height: 700px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@keyframes rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+@keyframes reverse_rotation {
+  from {transfrom: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}
+@keyframes rotation_color {
+  0%  {transform: rotate(0deg) scale(0.9, .9); fill: rgb(255, 0 , 0);}
+  16% {transform: rotate(60deg) scale(0.7, 0.7); fill: rgb(255, 127, 0);}
+  33% {transform: rotate(120deg) scale(.5, .5); fill: rgb(255, 255, 0);}
+  48% {transform: rotate(180deg) scale(.7, .7); fill: rgb(0, 255, 0);}
+  66% {transform: rotate(240deg) scale(.9, .9); fill: rgb(0, 0, 255);}
+  82% {transform: rotate(300deg) scale(1.1, 1.1); fill: rgb(0, 0, 255);}
+  100%{transform: rotate(360deg) scale(.9, .9); fill: rgb(148, 0, 211);}
+}
+@keyframes reverse_rotation_color {
+  0%  {transform: rotate(0deg) scale(0.8, 0.8); fill: rgb(255, 0 , 0);}
+  16% {transform: rotate(-60deg) scale(0.7, 0.7); fill: rgb(255, 127, 0);}
+  33% {transform: rotate(-120deg) scale(.5, .5); fill: rgb(255, 255, 0);}
+  48% {transform: rotate(-180deg) scale(.7, .7); fill: rgb(0, 255, 0);}
+  66% {transform: rotate(-240deg) scale(.9, .9); fill: rgb(0, 0, 255);}
+  82% {transform: rotate(-300deg) scale(1.1, 1.1); fill: rgb(0, 0, 255);}
+  100%{transform: rotate(-360deg) scale(.8, .8); fill: rgb(148, 0, 211);}
+}
+#outer, #middle, #inner {
+  transform-origin: center;
+  animation: rotation 4s infinite linear normal;
+  animation-fill-mode: forwards;
+  fill: rgba(45, 135, 642, .5);
+}
+
+#inner_middle, #middle_outer {
+  transform-origin: center;
+  animation: reverse_rotation 4s infinite linear normal;
+  animation-fill-mode: forwards;
+}
+
+#outer:hover, #middle:hover, #inner:hover {
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+#inner_middle:hover, #middle_outer:hover {
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+#outer:active, #middle:active, #inner:active {
+  animation: reverse_rotation_color 4s infinite linear normal;
+}
+
+#inner_middle:active, #middle_outer:active {
+  animation: rotation_color 4s infinite linear normal;
+}
