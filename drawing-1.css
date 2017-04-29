@@ -1,24 +1,81 @@
-.content {
-  width: 300px;
-  position: relative;
-  float: left;
-  margin-top: 50px;
+body {
+  overflow: hidden;
 }
-
-#container_2 {
-  width: 100%;
+#container {
+  margin: auto;
+  width: 700px;
   height: 700px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  margin-top: 10%;
+  z-index: 1;
+
 }
 
+#container_two {
+  position: absolute;
+  top: -50;
+  left: -50;
+  z-index: 3;
+}
+
+#container_three {
+  position: absolute;
+  top: -50;
+  right: -150;
+  z-index: 3;
+}
+
+#container_four {
+  position: absolute;
+  bottom: -150;
+  left: -50;
+  z-index: 3;
+}
+
+#container_five {
+  position: absolute;
+  bottom: -150;
+  right: -150;
+  z-index: 3;
+}
+
+#container_six {
+  position: absolute;
+  top: -250;
+  left: 27%;
+  z-index: 2;
+}
+
+#container_seven {
+  position: absolute;
+  bottom: -350;
+  left: 27%;
+  z-index: 2;
+}
+@keyframes whole_rotation {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg)rotateY(0deg);}
+  75% {transform: rotate(270deg) rotateY(180deg);}
+  100% {transform: rotate(360deg) rotateY(360deg);;}
+}
+
+#whole {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  animation: whole_rotation 3s infinite linear normal;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+  border-radius: 10em;
+  overflow: hidden;
+}
 @keyframes rotation {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
 }
 @keyframes reverse_rotation {
-  from {transfrom: rotate(0deg);}
+  from {transform: rotate(0deg);}
   to {transform: rotate(-360deg);}
 }
 @keyframes rotation_color {
@@ -39,17 +96,23 @@
   82% {transform: rotate(-300deg) scale(1.1, 1.1); fill: rgb(0, 0, 255);}
   100%{transform: rotate(-360deg) scale(.8, .8); fill: rgb(148, 0, 211);}
 }
+
+@keyframes z-axis-rotation {
+  from {transform: rotateY(0deg) rotateZ(0deg);}
+  to {transform: rotateY(360deg) rotateZ(360deg);}
+}
 #outer, #middle, #inner {
   transform-origin: center;
-  animation: rotation 4s infinite linear normal;
+  animation: z-axis-rotation 2s infinite linear normal;
   animation-fill-mode: forwards;
-  fill: rgba(45, 135, 642, .5);
+  fill: rgba(0, 0, 0, 0.5);
 }
 
 #inner_middle, #middle_outer {
   transform-origin: center;
-  animation: reverse_rotation 4s infinite linear normal;
+  animation: reverse_rotation 2s infinite linear normal;
   animation-fill-mode: forwards;
+  fill: hsla(360, 100%, 100%, 0.5);
 }
 
 #outer:hover, #middle:hover, #inner:hover {
