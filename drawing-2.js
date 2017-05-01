@@ -1,70 +1,22 @@
-//var container = document.getElementById('container');
-var container1 = document.getElementById('container1');
-var container2 = document.getElementById('container2');
-var container3 = document.getElementById('container3');
-var container4 = document.getElementById('container4');
-var container5 = document.getElementById('container5');
-var container6 = document.getElementById('container6');
-var container7 = document.getElementById('container7');
-var container8 = document.getElementById('container8');
-var container9 = document.getElementById('container9');
-var container10 = document.getElementById('container10');
-var container11 = document.getElementById('container11');
-var container12 = document.getElementById('container12');
-var container13 = document.getElementById('container13');
-var container14 = document.getElementById('container14');
-var container15 = document.getElementById('container15');
-var container16 = document.getElementById('container16');
-var container17 = document.getElementById('container17');
 
+var stars = document.getElementsByClassName('star');
 
-var hueNumber1 = Math.floor(Math.random() * 360);
-var hueNumber2 = Math.floor(Math.random() * 360);
-
-function colorField() {
-  console.log('Hue number 1: ' + hueNumber1);
-  console.log('Hue number 2: ' + hueNumber2);
-
-  requestAnimationFrame(colorField);
-
-  var hsl1 = "hsl(" + hueNumber1 + ", 100%, 50%)";
-  var hsl2 = "hsl(" + hueNumber2 + ", 100%, 50%)";
-  var degree = 45; // angle of gradient
-  var hslGradient = "linear-gradient(" + degree + "deg," + hsl1 + "," + hsl2 + ")";
-
-  //container.style.backgroundImage = hslGradient;
-  container_1.style.backgroundImage = hslGradient;
-  container2.style.backgroundImage = hslGradient;
-  container3.style.backgroundImage = hslGradient;
-  container4.style.backgroundImage = hslGradient;
-  container5.style.backgroundImage = hslGradient;
-  container6.style.backgroundImage = hslGradient;
-  container7.style.backgroundImage = hslGradient;
-  container8.style.backgroundImage = hslGradient;
-  container9.style.backgroundImage = hslGradient;
-  container10.style.backgroundImage = hslGradient;
-  container11.style.backgroundImage = hslGradient;
-  container12.style.backgroundImage = hslGradient;
-  container13.style.backgroundImage = hslGradient;
-  container14.style.backgroundImage = hslGradient;
-  container15.style.backgroundImage = hslGradient;
-  container16.style.backgroundImage = hslGradient;
-  container17.style.backgroundImage = hslGradient;
-  
-
-  
-
-  if (hueNumber1 < 360) {
-    hueNumber1 += 0.5;
-  } else {
-    hueNumber1 = 0;
+function change_color() {
+  for (i = 0; i < stars.length; i++){
+    x = stars[i];
+    var r = Math.floor((Math.random() * 255));
+    var g = Math.floor((Math.random() * 255));
+    var b = Math.floor((Math.random() * 255));
+    var a = Math.random();
+    var r1 = Math.floor((Math.random() * 255));
+    var g1 = Math.floor((Math.random() * 255));
+    var b1 = Math.floor((Math.random() * 255));
+    x.style.fill = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+    x.style.stroke = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
   }
-
-  if (hueNumber2 < 360) {
-    hueNumber2 += 0.25;
-  } else {
-    hueNumber2 = 0;
-  }
+    // ob.style.fill = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    // ob[1].style.fill = "#" + ((1 << 24) * Math.random() | 0).toString(16);
 }
 
-requestAnimationFrame(colorField);
+setInterval(change_color,100);
+setTimein(change_color(), 5000);
