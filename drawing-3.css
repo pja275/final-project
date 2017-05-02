@@ -1,0 +1,100 @@
+body{
+  /*overflow: hidden;*/
+}
+#element {
+  position: relative;
+  margin-left: 20%;
+  width: 100%;
+  /*margin-top: 5%;*/
+}
+
+#container {
+  width: 100%;
+  margin: auto;
+}
+@keyframes scaling {
+  0%{transform: scale(1); }
+  50%{transform: scale(2);}
+  100%{transform: scale(1);}
+
+}
+
+#element:active {
+  /*transform-origin: center;
+  animation: scaling 5s infinite linear normal;*/
+}
+
+@keyframes clockwise_rot {
+  0%{transform: rotate(0deg) scale(1);}
+  25%{transform: rotate(360deg) scale(2);}
+  50%{transform: rotate(720deg) scale(1);}
+  75%{transform: rotate(1080deg) scale(0);}
+  100%{transform: rotate(1440deg) scale(1);}
+}
+
+@keyframes count_clockwise_rot {
+  0%{transform: rotate(0deg) scale(1);}
+  25%{transform: rotate(-90deg) scale(0);}
+  50%{transform: rotate(-180deg) scale(1);}
+  75%{transform: rotate(-270deg) scale(2);}
+  100%{transform: rotate(-360deg) scale(1);}
+}
+
+#star1, #star3, #star6, #star8, #star9, #star11 {
+  transform-origin: center;
+  animation: clockwise_rot 3s infinite linear normal;
+}
+
+
+#star2, #star4, #star5, #star7, #star10, #star12{
+  transform-origin: center;
+  animation: count_clockwise_rot 3s infinite linear normal 3s;
+}
+
+@keyframes circle_rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes rev_circle_rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}
+#tri {
+  transform-origin: center;
+  animation: scaling 3s infinite linear normal;
+}
+
+#circle2, #circle4, #circle6 {
+  transform-origin: center;
+  animation: circle_rotation 2s infinite linear normal;
+}
+
+#circle1, #circle3, #circle5 {
+  transform-origin: center;
+  animation: rev_circle_rotation 3s infinite linear normal;
+}
+
+@keyframes identifier {
+
+}
+
+#top1, #top2, #top3 {
+  transform-origin: center;
+  animation: clockwise_rot 3s infinite linear normal;
+}
+
+#bottom1, #bottom2, #bottom3 {
+  transform-origin: center;
+  animation: clockwise_rot 3s infinite linear normal;
+}
+
+#left1, #left2, #right1, #right2 {
+  transform-origin: center;
+  animation: clockwise_rot 3s infinite linear normal;
+}
+
+#topleft, #topright, #bottomleft, #bottomright {
+  transform-origin: center;
+  animation: clockwise_rot 3s infinite linear normal;
+}

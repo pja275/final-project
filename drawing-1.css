@@ -66,7 +66,7 @@ body {
   transform-origin: center;
   animation: whole_rotation 3s infinite linear normal;
   animation-fill-mode: forwards;
-  animation-delay: 5s;
+  animation-delay: 13s;
   border-radius: 10em;
   overflow: hidden;
 }
@@ -103,14 +103,14 @@ body {
 }
 #outer, #middle, #inner {
   transform-origin: center;
-  animation: z-axis-rotation 2s infinite linear normal;
+  animation: z-axis-rotation 2s infinite linear normal 7s;
   animation-fill-mode: forwards;
   fill: rgba(0, 0, 0, 0.5);
 }
 
 #inner_middle, #middle_outer {
   transform-origin: center;
-  animation: reverse_rotation 2s infinite linear normal;
+  animation: reverse_rotation 2s infinite linear normal 3s;
   animation-fill-mode: forwards;
   fill: hsla(360, 100%, 100%, 0.5);
 }

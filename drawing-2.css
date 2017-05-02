@@ -31,15 +31,15 @@ body {
 }
 
 @keyframes moveup {
-	0%{transform: translateY(500px);}
-	50%{transform: translateY(-500px);}
-	100%{transform: translateY(500px);}
+	0%{transform: translateY(600px);}
+	50%{transform: translateY(-600px);}
+	100%{transform: translateY(600px);}
 }
 
 @keyframes movedown {
-	0%{transform: translateY(-500px);}
-	50%{transform: translateY(500px);}
-	100%{transform: translateY(-500px);}
+	0%{transform: translateY(-600px);}
+	50%{transform: translateY(600px);}
+	100%{transform: translateY(-600px);}
 }
 
 @keyframes scaling {
@@ -132,23 +132,23 @@ body {
 #row_one, #row_three, #row_five {
 	fill: red;
 	transform-origin: center;
-	animation: move_left 5s infinite linear normal 10s;
+	animation: move_left 5s infinite linear normal 15s;
 }
 
 #row_two, #row_four, #row_six {
 	fill: green;
-	animation: move_right 5s infinite normal 10s;
+	animation: move_right 5s infinite normal 15s;
 }
 
 /*ELEMENT TWO STYLES */
 #down1{
 	transform-origin: center;
-	animation: move_left1 4s infinite linear normal 7s;
+	animation: move_left1 4s infinite linear normal 9s;
 }
 
 #up1{
 	transform-origin: center;
-	animation: move_right1 4s infinite linear normal 7s;
+	animation: move_right1 4s infinite linear normal 9s;
 }
 
 #down1:hover {
