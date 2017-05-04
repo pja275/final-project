@@ -3,22 +3,17 @@
 
 body {
 	overflow: hidden;
-	background-image: url("galaxy.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 h1 {
 	text-align: center;
 	font-family: helvetica;
 	font-size: 50px;
-	color: hsla(360, 100%, 100%, 0.81);
 }
 h2{
 	text-align: center;
 	margin-top: -25px;
 	font-family: 'Cookie', cursive;
 	font-size: 40px;
-	color: hsla(360, 100%, 100%, 0.81);
 }
 h3 {
 	text-align: center;
@@ -51,16 +46,113 @@ h3 {
 	background-color: black;
 	border-radius: 3em;
 	margin-right: 70px;
+	overflow: hidden;
 }
 a{
 	text-decoration: none;
 	color: black;
 }
 
+/*Drawing One Design*/
+
+@keyframes movement {
+	0%{transform: translateY(0px);}
+	50%{transform: translateY(-150px);}
+	100%{transform: translateY(0px);}
+}
+
+@keyframes movement_bottom {
+	0%{transform: translateY(0px);}
+	50%{transform: translateY(150px);}
+	100%{transform: translateY(0px);}
+}
+
+@keyframes movement_right {
+	0%{transform: translateX(0px);}
+	50%{transform: translateX(150px);}
+	100%{transform: translateX(0px);}
+}
+
+@keyframes movement_left {
+	0%{transform: translateX(0px);}
+	50%{transform: translateX(-150px);}
+	100%{transform: translateX(0px);}
+}
 .menu:hover {
 	background-color: hsla(360, 100%, 100%, 0.35);
 	transition-property: background-color;
-	transition-duration: 0.5s;
+	transition-duration: 1s;
 	transition-timing-function: ease-in-out;
 
 }
+
+
+#top {
+	transform-origin: center;
+	animation: movement 4s infinite ease-out normal forwards;
+}
+
+#bottom {
+	transform-origin: center;
+	animation: movement_bottom 4s infinite ease-out normal forwards;
+}
+
+#right {
+	transform-origin: center;
+	animation: movement_right 4s infinite ease-out normal forwards;
+}
+#left {
+	transform-origin: center;
+	animation: movement_left 4s infinite ease-out normal forwards;
+}
+
+/*Drawing 2 Design*/
+
+@keyframes spin_right {
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+
+@keyframes spin_left {
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-360deg);}
+}
+
+#inner {
+	transform-origin: center;
+	animation: spin_right 3s infinite linear normal forwards;
+}
+
+#outer {
+	transform-origin: center;
+	animation: spin_left 3s infinite linear normal forwards;
+}
+
+/* Drawing 3 Design */
+
+@keyframes rotate_scale {
+	0%{transform: rotate(0deg) scale(1);}
+	25%{transform: rotate(90deg) scale(1.7);}
+	50%{transform: rotate(180deg) scale(1);}
+	75%{transform: rotate(270deg) scale(0);}
+	100%{transform: rotateZ(360deg) scale(1);}
+}
+
+@keyframes rev_rotate_scale {
+	0%{transform: rotate(0deg) scale(1);}
+	25%{transform: rotate(-90deg) scale(0);}
+	50%{transform: rotate(-180deg) scale(1);}
+	75%{transform: rotate(-270deg) scale(1.7);}
+	100%{transform: rotateZ(-360deg) scale(1);}
+}
+
+#one, #three, #five, #seven, #nine, #eleven, #thirteen, #fifteen {
+	transform-origin: center;
+	animation: rotate_scale 3s infinite linear normal;
+}
+
+#two, #four, #six, #eight, #ten, #twelve, #fourteen, #sixteen {
+	transform-origin: center;
+	animation: rev_rotate_scale 3s infinite linear normal 1s;
+}
+
